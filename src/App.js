@@ -5,7 +5,6 @@ import 'firebase/compat/auth';
 
 import {useAuthState} from 'react-firebase-hooks/auth';
 import {useCollectionData} from 'react-firebase-hooks/firestore';
-import { getAnalytics } from "firebase/analytics";
 import { useState } from 'react';
 
 import { useRef } from 'react';
@@ -113,7 +112,7 @@ export const ChatMessage = (props) => {
 
   return (
     <div className={`message ${messageClass}`}>
-      <img src={photoURL}/>
+      <img src={photoURL} alt='user image'/>
       <p>{text}</p>
     </div>
   )
