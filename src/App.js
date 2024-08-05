@@ -26,8 +26,10 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        
+      <header className="App-header" style={user ?{ display:'flex'} : {display:'none'}}>
+        <h1>Superchat</h1>
+        <h2>Hi there - {auth.currentUser.displayName} !</h2>
+        <SignOut/>
       </header>
       <section>
         {user ? <ChatRoom/> : <SignIn/>}
@@ -65,7 +67,6 @@ function ChatRoom(){
   const [messages] = useCollectionData(query, {idField: 'id'});
 
   const [formValue, setFormValue] = useState('');
-  console.log(firestore.appId)
   const dummy = useRef();
   const sendMessage = async(e) =>{
     e.preventDefault();
@@ -86,16 +87,12 @@ function ChatRoom(){
   
   return (
     <>
-      <h1>ChatRoom</h1>
-      <h2>Hi there - {auth.currentUser.displayName} !</h2>
-      <SignOut/>
-
       <main>
         {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg}/>)}
         <div ref={dummy}></div>
 
       </main>
-      <form onSubmit={sendMessage}>
+      <form className='textinput' onSubmit={sendMessage}>
         <input value={formValue} onChange={(e) => setFormValue(e.target.value)}/>
         <button type='submit'>Send <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
       </form>
