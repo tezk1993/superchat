@@ -67,37 +67,37 @@ main::-webkit-scrollbar-thumb {
 
 
 
-/* .textinput{
-  border: red 2px solid;
+form{
   height: 10vh;
   position: fixed;
   bottom: 0;
-  background-color: rgb(24, 23, 23);
+  width: min(728px,100svw);
   display:  flex;
-  font-size: 1.5rem;  
-  width: 64px;
+  flex-direction: row;
+} 
 
-} */
-
-/* form button {
-  width: 20%;
+#submitbutton {
+  width: 10%;
   background-color: rgb(56, 56, 143);
-} */
+}
 
 
 .textinput {
-
+  width:100%;
+  font-size: 1.5rem;  
+  color: black;
+  font-weight: 700;
 }
 
 button {
-  /* background-color: #282c34; 
+  background-color: #282c34; 
   border: none;
   color: white;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
-  font-size: 1.25rem; */
+  font-size: 1.25rem;
 }
 
 button:disabled {
@@ -112,9 +112,6 @@ button:disabled {
   max-width: 400px;
   margin: 0 auto;
 }
-
-
-
 
 ul, li {
   text-align: left;

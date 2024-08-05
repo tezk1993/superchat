@@ -25,17 +25,26 @@ function App() {
   const [user] = useAuthState(auth);
 
   return (
+  
     <div className="App">
-      <header className="App-header" style={user ?{ display:'flex'} : {display:'none'}}>
-        <h1>Superchat</h1>
-        <h2>Hi there - {auth.currentUser.displayName} !</h2>
-        <SignOut/>
-      </header>
-      <section>
-        {user ? <ChatRoom/> : <SignIn/>}
-      </section>
-      
+      {user ? 
+          <div>
+            <header className="App-header" style={user ?{ display:'flex'} : {display:'none'}}>
+              <h1>Superchat</h1>
+              <h2>Hi there - {auth.currentUser.displayName} !</h2>
+              <SignOut/>
+            </header>
+            <section>
+              {user ? <ChatRoom/> : <SignIn/>}
+            </section>
+          </div>
+        :
+        <div>
+
+        </div>
+        }
     </div>
+  
   );
 }
 
@@ -92,9 +101,9 @@ function ChatRoom(){
         <div ref={dummy}></div>
 
       </main>
-      <form className='textinput' onSubmit={sendMessage}>
-        <input value={formValue} onChange={(e) => setFormValue(e.target.value)}/>
-        <button type='submit'>Send <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+      <form  onSubmit={sendMessage}>
+        <input className='textinput' value={formValue} onChange={(e) => setFormValue(e.target.value)}/>
+        <button id='submitbutton' type='submit'>Send <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
       </form>
 
     </>
