@@ -1,0 +1,51 @@
+
+.container{
+  height: 100%;
+  
+}
+
+.messages{
+  padding: 10px;
+  display: flex;
+  flex-direction: column-reverse;
+  height: 95%;
+  overflow-y: scroll;
+}
+
+form{
+  height: 5%;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display:  flex;
+  flex-direction: row;
+} 
+
+#submitbutton {
+  width: 7.5%;
+  background-color: rgb(56, 56, 143);
+}
+
+
+.textinput {
+  width:100%;
+  font-size: 1.5rem;  
+  color: black;
+  font-weight: 700;
+}
+
+button {
+  background-color: #282c34; 
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+#submitbutton:disabled {
+  background-color: rgb(24, 24, 65);
+  cursor: not-allowed;
+}
